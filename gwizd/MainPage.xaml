@@ -7,7 +7,7 @@
 
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <StackLayout Margin="0, 130, 0, 0">
-            <Frame CornerRadius="20" BorderColor="Transparent" Margin="30, 0, 30, 0" HeightRequest="450">
+            <Frame CornerRadius="20" BorderColor="Transparent" Margin="30, 0, 30, 0" HeightRequest="450" Padding="0,0,0,0">
                 <maps:Map x:Name="mainMap">
                     <x:Arguments>
                         <MapSpan>
