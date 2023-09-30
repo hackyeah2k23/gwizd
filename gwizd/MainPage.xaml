@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="gwizd.MainPage" Title="Gwizd" BackgroundColor="#1e272e">
+             x:Class="gwizd.MainPage" Title="Gwizd" BackgroundColor="#1e272e"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps">
 
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <StackLayout Margin="0, 130, 0, 0">
             <Frame CornerRadius="20" BorderColor="Transparent" Margin="30, 0, 30, 0" HeightRequest="450">
+                <maps:Map x:Name="mainMap"/>
             </Frame>
             <Button Text="Report Lost Animal" x:Name="ReportButton" BackgroundColor="#f53b57" HorizontalOptions="StartAndExpand" 
         WidthRequest="430" HeightRequest="65" FontSize="21" FontAttributes="Bold" Margin="30, 20, 0, 30"/>
