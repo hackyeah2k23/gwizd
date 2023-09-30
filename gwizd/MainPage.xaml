@@ -1,41 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="gwizd.MainPage">
+             x:Class="gwizd.MainPage" Title="Gwizd" BackgroundColor="#1e272e">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout Margin="0, 130, 0, 0">
+            <Frame CornerRadius="20" BorderColor="Transparent" Margin="30, 0, 30, 0" HeightRequest="450">
+            </Frame>
+            <Button Text="Report Lost Animal" x:Name="ReportButton" BackgroundColor="#f53b57" HorizontalOptions="StartAndExpand" 
+        WidthRequest="430" HeightRequest="65" FontSize="21" FontAttributes="Bold" Margin="30, 20, 0, 30"/>
+        </StackLayout>
+        
+        <StackLayout VerticalOptions="CenterAndExpand">
+            
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" VerticalOptions="End">
+            
+        </StackLayout>
+    </StackLayout>
 
 </ContentPage>
