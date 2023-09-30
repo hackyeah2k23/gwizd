@@ -10,7 +10,7 @@
                 <maps:Map x:Name="mainMap"/>
             </Frame>
             <Button Text="Report Lost Animal" x:Name="ReportButton" BackgroundColor="#f53b57" HorizontalOptions="StartAndExpand" 
-        WidthRequest="430" HeightRequest="65" FontSize="21" FontAttributes="Bold" Margin="30, 20, 0, 30"/>
+                    WidthRequest="430" HeightRequest="65" FontSize="21" FontAttributes="Bold" Margin="30, 20, 0, 30"/>
         </StackLayout>
         
         <StackLayout VerticalOptions="CenterAndExpand">

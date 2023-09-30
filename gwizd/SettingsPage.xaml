@@ -3,11 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gwizd.SettingsPage"
              Title="Settings" BackgroundColor="#1e272e">
-    <VerticalStackLayout>
+    <StackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Settings Page" 
+            TextColor="White" 
+            FontSize="Large"
+            Margin="10,20,10,0"/>
+        <Switch 
+            IsToggled="True" 
+            Margin="10,20,10,0"
+            ThumbColor="{DynamicResource PrimaryColor}" />
+        <Label 
+            Text="Toggle Indicator" 
             TextColor="White"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            FontSize="Medium"
+            Margin="10,0,10,0"/>
+        <Slider 
+            Margin="10,20,10,0"
+            Minimum="0"
+            Maximum="100"
+            Value="50" 
+            ThumbColor="{DynamicResource PrimaryColor}" />
+        <Label 
+            Text="Volume" 
+            TextColor="White" 
+            FontSize="Medium"
+            Margin="10,0,10,0"/>
+        <Entry 
+            Placeholder="Username" 
+            Margin="10,20,10,0" 
+            TextColor="{DynamicResource TextColor}"/>
+        <Entry 
+            Placeholder="Password" 
+            Margin="10,10,10,0"
+            IsPassword="True"
+            TextColor="{DynamicResource TextColor}"/>
+        <Button 
+            Text="Save" 
+            Margin="10,20,10,0"
+            TextColor="White"
+            BackgroundColor="{DynamicResource PrimaryColor}"/>
+    </StackLayout>
 </ContentPage>
