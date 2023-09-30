@@ -7,10 +7,25 @@
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <StackLayout Margin="0, 130, 0, 0">
             <Frame CornerRadius="20" BorderColor="Transparent" Margin="30, 0, 30, 0" HeightRequest="450">
-                <maps:Map x:Name="mainMap"/>
+                <maps:Map x:Name="mainMap">
+                    <x:Arguments>
+                        <MapSpan>
+                            <x:Arguments>
+                                <sensors:Location>
+                                    <x:Arguments>
+                                        <x:Double>52.236013</x:Double>
+                                        <x:Double>21.0152747</x:Double>
+                                    </x:Arguments>
+                                </sensors:Location>
+                                <x:Double>0.01</x:Double>
+                                <x:Double>0.01</x:Double>
+                            </x:Arguments>
+                        </MapSpan>
+                    </x:Arguments>
+                </maps:Map>
             </Frame>
             <Button Text="Report Lost Animal" x:Name="ReportButton" BackgroundColor="#f53b57" HorizontalOptions="StartAndExpand" 
-                    WidthRequest="430" HeightRequest="65" FontSize="21" FontAttributes="Bold" Margin="30, 20, 0, 30"/>
+                    WidthRequest="430" HeightRequest="65" FontSize="21" FontAttributes="Bold" Margin="30, 20, 0, 30" Clicked="ReportButton_Clicked"/>
         </StackLayout>
         
         <StackLayout VerticalOptions="CenterAndExpand">

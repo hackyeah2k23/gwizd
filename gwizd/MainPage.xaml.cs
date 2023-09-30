@@ -7,11 +7,12 @@ namespace gwizd
     public partial class MainPage : ContentPage
     {
         UserLocation locationService;
+        UserPhotos photos;
         public MainPage()
         {
             InitializeComponent();
             locationService = new UserLocation();
-
+            photos = new UserPhotos();
 
             LoadLocation();
         }
@@ -34,5 +35,9 @@ namespace gwizd
             };
         }
 
+        private void ReportButton_Clicked(object sender, EventArgs e)
+        {
+            photos.TakePhoto();
+        }
     }
 }
