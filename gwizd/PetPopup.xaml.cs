@@ -12,6 +12,6 @@ public partial class PetPopup : Popup
         animalPhoto.Source = ImageSource.FromStream(() => new MemoryStream(image));
 
         animalName.Text = animalData.TypeOfAnimal;
-        animalBreed.Text = animalData.Breed;
+        animalBreed.Text = animalData.Details;
     }
 }
