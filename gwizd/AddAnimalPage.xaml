@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gwizd.AddAnimalPage"
+             Title="Report" BackgroundColor="#1e272e">
+    <ScrollView>
+        <VerticalStackLayout Margin="20, 35, 20, 0">
+            <Image x:Name="animalPhoto" WidthRequest="350" Margin="0, 0, 0, 20"/>
+            <Label Text="Location:" x:Name="location" TextColor="White" Margin="0, 0, 0, 35" HorizontalTextAlignment="Center"/>
+            <Label Text="What kind of animal:" TextColor="White" />
+            <Entry Keyboard="Text" x:Name="animal" Placeholder="Enter animal type" TextColor="White"/>
+
+            <Label Text="Color of the animal:" TextColor="White" Margin="0, 25, 0, 0"/>
+            <Entry Keyboard="Text" x:Name="color" Placeholder="Enter animal color" TextColor="White"/>
+
+            <Label Text="Details:" TextColor="White" Margin="0, 25, 0, 0"/>
+            <Editor Keyboard="Text" x:Name="details" Placeholder="Enter animal details" TextColor="White"/>
+
+            <Label Text="Date:" TextColor="White" Margin="0, 25, 0, 0" />
+            <DatePicker x:Name="date" TextColor="White"/>
+
+            <Label Text="Is it wild?" TextColor="White" Margin="0, 25, 0, 0"/>
+            <Switch x:Name="isItWild" HorizontalOptions="Start"/>
+
+            <Label Text="Is the animal found or lost?" TextColor="White" Margin="0, 25, 0, 0"/>
+            <Picker x:Name="foundOrLost" TextColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Found</x:String>
+                        <x:String>Lost</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Add" BackgroundColor="#f53b57" HeightRequest="45" FontAttributes="Bold" FontSize="16" TextColor="White" Margin="0, 35, 0, 45" Clicked="Button_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

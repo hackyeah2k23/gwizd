@@ -24,7 +24,7 @@ namespace gwizd
             mainMap.MoveToRegion(mapSpan);
             Pin pin = new Pin()
             {
-                Label = "Jesteś tutaj",
+                Label = "You are here",
                 Location = loc
             };
             mainMap.Pins.Add(pin);
@@ -35,9 +35,11 @@ namespace gwizd
             };
         }
 
-        private void ReportButton_Clicked(object sender, EventArgs e)
+        private async void ReportButton_Clicked(object sender, EventArgs e)
         {
-            photos.TakePhoto();
+            FileResult photo = await photos.TakePhoto();
+            Location loc = await locationService.GetCachedLocation();
+            await Navigation.PushAsync(new AddAnimalPage(photo, loc));
         }
     }
 }

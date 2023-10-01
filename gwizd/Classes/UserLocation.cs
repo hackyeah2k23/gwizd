@@ -39,6 +39,35 @@ namespace gwizd.Classes
             }
         }
 
+        public async Task<Location> GetCachedLocation()
+        {
+            try
+            {
+                Location location = await Geolocation.Default.GetLastKnownLocationAsync();
+
+                if (location != null)
+                    return location;
+            }
+            catch (FeatureNotSupportedException fnsEx)
+            {
+                // Handle not supported on device exception
+            }
+            catch (FeatureNotEnabledException fneEx)
+            {
+                // Handle not enabled on device exception
+            }
+            catch (PermissionException pEx)
+            {
+                // Handle permission exception
+            }
+            catch (Exception ex)
+            {
+                // Unable to get location
+            }
+
+            return new Location(0,0);
+        }
+
         public void CancelRequest()
         {
             if (_isCheckingLocation && _cancelTokenSource != null && _cancelTokenSource.IsCancellationRequested == false)
