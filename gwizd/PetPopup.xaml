@@ -1,0 +1,12 @@
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="gwizd.PetPopup">
+
+    <VerticalStackLayout Padding="10,10,10,10" BackgroundColor="#1e272e">
+        <Image x:Name="animalPhoto" WidthRequest="350" Margin="0, 0, 0, 20"/>
+        <Label x:Name="animalName" FontSize="Large" FontAttributes="Bold" Margin="0, 0, 0, 20"/>
+        <Label x:Name="animalBreed" FontSize="Medium" Margin="0, 0, 0, 20"/>
+    </VerticalStackLayout>
+
+</toolkit:Popup>

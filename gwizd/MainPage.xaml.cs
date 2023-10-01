@@ -1,4 +1,5 @@
-﻿using gwizd.Classes;
+﻿using CommunityToolkit.Maui.Views;
+using gwizd.Classes;
 using Microsoft.Maui.Controls.Maps;
 using Microsoft.Maui.Maps;
 
@@ -8,13 +9,23 @@ namespace gwizd
     {
         UserLocation locationService;
         UserPhotos photos;
+        DataController dataController;
         public MainPage()
         {
             InitializeComponent();
             locationService = new UserLocation();
             photos = new UserPhotos();
+            dataController = new DataController();
 
             LoadLocation();
+            
+        }
+        
+        public void DisplayPopup(AnimalData data)
+        {
+            var popup = new PetPopup(data);
+
+            this.ShowPopup(popup);
         }
 
         public async void LoadLocation()
@@ -33,6 +44,29 @@ namespace gwizd
             {
                 DisplayAlert("test", "test", "tuguzikhir");
             };
+            
+            List<AnimalData> pins = await dataController.GetAnimals();
+
+            pins.ForEach(animal =>
+            {
+                string Location = animal.Location;
+                string[] LocationSplit = Location.Split(':');
+                double Latitude = Double.Parse(LocationSplit[0]);
+                double Longitude = Double.Parse(LocationSplit[1]);
+                Pin pin = new Pin()
+                {
+                    Label = animal.TypeOfAnimal,
+                    Location = new Location(Latitude, Longitude)
+
+                };
+                pin.InfoWindowClicked += (s, args) =>
+                {
+                    DisplayPopup(animal);
+                };
+                mainMap.Pins.Add(pin);
+            });
+
+
         }
 
         private async void ReportButton_Clicked(object sender, EventArgs e)

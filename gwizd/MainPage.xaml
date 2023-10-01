@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gwizd.MainPage" Title="PetRescue" BackgroundColor="#1e272e"
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
-             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials">
+             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <StackLayout Margin="0, 15, 0, 0">
@@ -28,13 +29,13 @@
             <Button Text="Report Found/Lost Animal" x:Name="ReportButton" BackgroundColor="#f53b57" HorizontalOptions="StartAndExpand"
                     WidthRequest="420" HeightRequest="75" FontSize="26" FontAttributes="Bold" FontFamily="Lobster-Regular" Margin="35, 25, 0, 0" Clicked="ReportButton_Clicked"/>
         </StackLayout>
-        
+
         <StackLayout VerticalOptions="CenterAndExpand">
-            
+
         </StackLayout>
-        
+
         <StackLayout Orientation="Horizontal" VerticalOptions="End">
-            
+
         </StackLayout>
     </StackLayout>
 

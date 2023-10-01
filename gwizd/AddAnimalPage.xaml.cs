@@ -3,23 +3,24 @@ using System.Text;
 
 namespace gwizd;
 
+public class AnimalData
+{
+    public string TypeOfAnimal { get; set; }
+    public string Location { get; set; }
+    public string ImageData { get; set; }
+    public bool IsWild { get; set; }
+    public bool Found { get; set; }
+    public string Color { get; set; }
+    public string Details { get; set; }
+    public DateTime Date { get; set; }
+    public string Breed { get; set; }
+}
+
 public partial class AddAnimalPage : ContentPage
 {
     private readonly FileResult _photo;
     private readonly Location _loc;
 
-    public class AnimalData
-    {
-        public string TypeOfAnimal { get; set; }
-        public string Location { get; set; }
-        public byte[] ImageDataBase64 { get; set; }
-        public bool IsWild { get; set; }
-        public bool Found { get; set; }
-        public string Color { get; set; }
-        public string Details { get; set; }
-        public DateTime Date { get; set; }
-        public string Breed { get; set; }
-    }
     public AddAnimalPage(FileResult photo, Location loc)
     {
         InitializeComponent();
@@ -33,7 +34,7 @@ public partial class AddAnimalPage : ContentPage
 
         if (_loc != null)
         {
-            location.Text = $"Lat: {_loc.Latitude}, Lon: {_loc.Longitude}";
+            location.Text = $"{_loc.Latitude}:{_loc.Longitude}";
         }
     }
 
@@ -80,7 +81,7 @@ public partial class AddAnimalPage : ContentPage
         {
             TypeOfAnimal = animal.Text,
             Location = location.Text,
-            ImageDataBase64 = File.ReadAllBytes(_photo.FullPath),
+            ImageData = Convert.ToBase64String(File.ReadAllBytes(_photo.FullPath)),
             IsWild = isItWild.IsToggled,
             Found = foundOrLost.SelectedIndex == 0,
             Color = color.Text,
